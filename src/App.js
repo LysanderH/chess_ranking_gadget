@@ -9,11 +9,13 @@ import {
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <h1>Freitag Abend</h1>
       <Router>
-        <Link to="/">Home</Link>
-        <Link to="/ranking">Rangliste</Link>
+        <div className="links">
+          <Link to="/">Ergebnisse</Link>
+          <Link to="/ranking">Rangliste</Link>
+        </div>
         <Switch>
           <Route path="/ranking">
             <Ranking />

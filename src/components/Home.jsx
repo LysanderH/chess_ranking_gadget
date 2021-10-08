@@ -106,7 +106,7 @@ export default function Home() {
                 <tbody>
                     {playersTable.map((player, index) => (
                         <tr key={index}>
-                            <th>{player.name} <form action="" onClick={e => removePlayer(e, index)}><button>X</button></form></th>
+                            <th>{player.name} <form action="" onClick={e => removePlayer(e, index)}><button className="delete">X</button></form></th>
                             {rounds.map((round, ind) => (
                                 !((round) in player.games) ?
                                     <td key={ind}>
@@ -128,7 +128,7 @@ export default function Home() {
             <form onSubmit={addPlayer} action="/" method="post">
                 <label htmlFor="player">Spieler</label>
                 <input type="text" name="player" placeholder="Spieler Name" />
-                <button type="submit">Hinzufügen</button>
+                <button type="submit" className="add">+</button>
             </form>
         </div >
     )

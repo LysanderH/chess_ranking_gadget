@@ -11,3 +11,65 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+a {
+  text-decoration: none;
+  color: #333;
+  padding: .4rem .6rem;
+}
+a:hover {
+  color: rgb(6, 22, 77);
+}
+
+.App {
+  display: grid;
+  grid-template-areas: 'title links''table table';
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1024px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.links {
+  grid-area: links;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  grid-area: title;
+}
+table {
+  grid-area: table;
+  border-collapse: collapse;
+}
+table,
+td,
+th {
+  border: 1px solid black;
+}
+
+td, th {
+  padding: .5rem 1rem;
+}
+
+thead {background-color:#ccc;}
+
+.delete {
+  background-color: #d9534f;
+    box-shadow: none;
+    border: none;
+    padding: .4rem .6rem;
+}
+
+.add {
+  background-color: #5cb85c;
+  box-shadow: none;
+  border: none;
+  padding: .4rem .6rem;
+}
+
+form {
+  display: flex;
+}

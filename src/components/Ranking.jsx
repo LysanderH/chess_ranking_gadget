@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import ReactPDF from '@react-pdf/renderer';
+import Print from "./Print";
 
 export default function Ranking() {
     const [playersTable, setPlayersTable] = useState(JSON.parse(localStorage.getItem('playersTable')) ?? []);
@@ -6,18 +9,20 @@ export default function Ranking() {
     const [ranking, setRanking] = useState([]);
 
     useEffect(() => {
-        const newRanking = [...playersTable.sort(function (a, b) {
+        const preRanking = [...playersTable.sort(function (a, b) {
             if (a.total === b.total) return a.name.localeCompare(b.name);
             return b.total - a.total;
         })];
 
-        setRanking(newRanking);
-        console.log(newRanking);
-        // playersTable.map(player => {
-        //     newRanking
-        // });
-    }, [])
+        // const newRanking = [];
+        // const currentRank = [];
 
+        // preRanking.forEach((player, index) => {
+        //     preRanking[index - 1] += player;
+        // });
+
+        setRanking(preRanking);
+    }, [])
 
     return (
         <div>
@@ -31,9 +36,9 @@ export default function Ranking() {
                     </tr>
                 </thead>
                 <tbody>
-                    {ranking.map(player => (
+                    {ranking.map((player, index) => (
                         <tr>
-                            <td>{player.rank}</td>
+                            <td></td>
                             <td>{player.name}</td>
                             <td>{player.total}</td>
                         </tr>
